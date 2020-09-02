@@ -1,10 +1,23 @@
 import React from 'react';
+import { Container, Box } from '@material-ui/core';
+import { Provider } from 'react-redux';
+
+import { store } from './store';
+import Basket from './components/Basket';
+import Products from './components/Products';
 
 const App = () => {
     return (
-        <div>
-            <h2>Shopping basket</h2>
-        </div>
+        <Provider store={store}>
+            <Container maxWidth="md">
+                <Box mt={5} mb={5}>
+                    <Products />
+                </Box>
+                <Box mt={5} mb={5}>
+                    <Basket />
+                </Box>
+            </Container>
+        </Provider>
     );
 };
 
